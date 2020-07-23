@@ -3,15 +3,16 @@ package main.java.com.company.division;
 import java.util.Scanner;
 
 public class SafeDivision {
-    public static void division() {
-        int a = 0;
-        int b = 0;
-        double c = 0;
 
+
+    public static void division() {
+        int a;
+        double c = 0;
         boolean error;
         Scanner in = new Scanner(System.in);
         System.out.print("Enter first number: ");
         a = in.nextInt();
+        float b = 0f;
         do {
             try {
                 error = false;

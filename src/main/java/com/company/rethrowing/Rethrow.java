@@ -1,27 +1,21 @@
 package main.java.com.company.rethrowing;
 
+import com.sun.jdi.AbsentInformationException;
+
 public class Rethrow {
 
-    public static void rethrowException() {
+    public void method1() throws AbsentInformationException {
         try {
-            Rethrow reThrowException = new Rethrow();
-            reThrowException.method1();
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-    private void method1() throws Exception {
-        try {
+            System.out.println("inside rethrow method 1");
             method2();
         } catch (Exception e) {
-            throw new Exception("This Exception thrown in first method.");
+            throw new AbsentInformationException();
         }
     }
 
-    private void method2() throws Exception {
-        throw new Exception("This Exception thrown in second method.");
+    public void method2() throws AbsentInformationException {
+        System.out.println("inside rethrow method 2");
+        throw new AbsentInformationException();
     }
 }
 
